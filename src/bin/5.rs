@@ -18,15 +18,12 @@ fn main() {
             }
         }
 
-        // Pushing the 1`` will not change the product and could cause unnecessary allocations of vec.
-        if potential_factor != 1 {
-            factors.push(potential_factor);
-        }
+        factors.push(potential_factor);
     }
 
-    // 2. Or maybe do this from the biggest to the smallest number, because then one would need
+    // 2. Or maybe do this from the biggest to the smallest number, but then one would need
     // a good factorization algorithm.
-    // 3. Or using the gcd, but that would require implementing the gcd algo:
+    // 3. Or using the gcd, but that would require implementing the gcd algo and:
     // lcm(a, b, ...) = (a * b * ...) / gcd(a, b, ...)
 
     let answer = factors.iter().product::<u128>();
